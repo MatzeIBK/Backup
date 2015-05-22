@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <!-- Bootstrap init -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="phonegap.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmouXxBlDi9G_UQigvgCxilD8LjKWMfBc&sensor=false#"></script>
+
+        <!-- Styles init -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+
+
+    <title>Electric Love Festival</title>
+
+</head>
+
+<body>
+    <div id="everything" class="container">
+        <div id="main" class="element">
+            <div class="col-xs-12 icon_name" style="margin-bottom: 20px">
+                <img src="img/main/logo_name.gif" style="width: 250px; height: 53px"/>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px">
+                <div class="col-xs-4" style="padding: 0px"><a class="js" href="sites/timetable.html"><img class="item_main" src="img/max/timetable.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0px"><a class="js" href="sites/love.html"><img class="item_main spinning" src="img/main/logo_new.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0px"><a class="js" href="sites/map.html"><img class="item_main" src="img/max/maps.gif"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4" style="padding: 0px"><a class="js" href="sites/artists.html"><img class="item_main" src="img/max/dj.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0px"><a class="js" href="sites/information.html"><img class="item_main" src="img/max/info.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0px"><a class="js" href="sites/test.html"><img class="item_main" src="img/max/food.gif"></a></div>
+            </div>
+
+            <hr style="margin: 15px 0 15px 0">
+
+            <div class="numbers" id="count2"></div>
+
+            <div class="row" style="padding: 0px; margin: 0px;">
+                <div class="col-xs-3 numbers" id="dday" style="padding: -5px"></div>
+                <div class="col-xs-3 numbers" id="dhour"></div>
+                <div class="col-xs-3 numbers" id="dmin"></div>
+                <div class="col-xs-3 numbers" id="dsec"></div>
+
+            </div>
+
+
+
+            <div class="row" style="padding: 0px; margin: 0px;">
+                <div class="col-xs-3 title" id="days">DAYS</div>
+                <div class="col-xs-3 title" id="hours">HOURS</div>
+                <div class="col-xs-3 title" id="minutes">MINUTES</div>
+                <div class="col-xs-3 title" id="seconds">SECONDS</div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <script src="js/countdown.js"></script>
+
+</body>
+
+</html>
