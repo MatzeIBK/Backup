@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>hammer</title>
-    <link href="../css/hammer.css" rel="stylesheet" type="text/css"/>
-    <script src="../js/hammer.js"></script>
-    <script>
-        var myElement = document.getElementById('myElement');
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Test</title>
 
-        var mc = new Hammer.Manager(myElement);
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script type="text/javascript">
 
-        // create a pinch and rotate recognizer
-        // these require 2 pointers
-        var pinch = new Hammer.Pinch();
-        var rotate = new Hammer.Rotate();
+        function OnLoad(){
+            document.addEventListener('deviceready', function(){
+                //enabling zoom control
+                cordova.plugins.ZoomControl.ZoomControl("true");
+                // enabling built in zoom control
+                cordova.plugins.ZoomControl.setBuiltInZoomControls("true");
+                // enabling display zoom control
+                cordova.plugins.ZoomControl.setDisplayZoomControls("true");
 
-        // we want to detect both the same time
-        pinch.recognizeWith(rotate);
+            }, function(){
+                alert('error deviceready');
+            });
 
-        // add to the Manager
-        mc.add([pinch, rotate]);
-
-
-        mc.on("pinch rotate", function(ev) {
-            myElement.textContent += ev.type +" ";
-        });
+        }
     </script>
+
 </head>
-<body>
-<div id="myElement"></div>
+<body onload="OnLoad();">
+<h1>Test Zoom</h1>
+<img src="../img/djs/alesso.jpg">
+
 </body>
 </html>
