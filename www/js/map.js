@@ -10,7 +10,6 @@ var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
 function initialize()
 {
-
     setStages(map, stages);
     setCamping(map, camps);
     setParking(map, parking);
@@ -407,8 +406,7 @@ function initialize()
         }
     }
     setMap(paths);
-
-    /* initialized finished*/
+/* initialized finished*/
 }
 
 var stages = [
@@ -436,6 +434,52 @@ var entrances = [
     ['north', 47.823170, 13.178028, 5, "<p class='pag'>North Entrance</p>"],
     ['north', 47.820667, 13.177333, 5, "<p class='pag'>North Entrance</p>"]
 ];
+
+/* get the user Location */
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var img_center = '../img/max/center_icon.png';
+    var userCoordinates = new google.maps.LatLng(latitude, longitude);
+
+    /* Eventlistener when Center Button is pressed */
+
+    document.getElementById("long").innerHTML = longitude;
+    document.getElementById("lat").innerHTML = latitude;
+
+    var center = new google.maps.Marker({
+        position: userCoordinates,
+        map: map,
+        icon: img_center
+    });
+    map.setCenter({lat: latitude, lng: longitude});
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
 
 function setCamping(map, campsides) {
 
@@ -518,49 +562,5 @@ function setEntrances(map, entrance){
         });
     }
 }
-/* get the user Location */
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    var img_center = '../img/max/center_icon.png';
-    var userCoordinates = new google.maps.LatLng(latitude, longitude);
-
-    /* Eventlistener when Center Button is pressed */
-
-    document.getElementById("long").innerHTML = longitude;
-    document.getElementById("lat").innerHTML = latitude;
-
-    var center = new google.maps.Marker({
-        position: userCoordinates,
-        map: map,
-        icon: img_center,
-    });
-    map.setCenter({lat: latitude, lng: longitude});
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
 google.maps.event.addDomListener(window, 'load', initialize);
