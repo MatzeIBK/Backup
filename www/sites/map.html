@@ -11,15 +11,25 @@
 
 <body>
     <div class="content-info" style="padding: 0; margin: 0 0 5px 0">
-        <a href="../index.html" style="text-decoration: none">
-            <div class="header_div">
+        <div class="header_div">
+            <a href="../index.html" style="text-decoration: none">
                 <img src="../img/max/arrow_left_back.gif" class="header_arrow_back"/>
-                Online Map
+                <em class="header_div" style="background-color: transparent">Online Map</em>
+            </a>
+            <div style="float: right;"><a id="alphBnt" onclick="getLocation()"><img src="../img/max/gps.png" style="height: 30px; margin: 10px 10px -10px 0"
+                onmouseover="this.src='../img/max/gps_blue.png'"
+                onmouseout="this.src='../img/max/gps.png'"></a>
             </div>
-        </a>
+        </div>
         <div class="google-maps">
             <div id="googleMap" style="width:100%;height:500px; color: #000000"></div>
         </div>
+        <div id="long">Longitude:  </div>
+        <div id="lat">Latitude: </div>
+
+        <div id="test">will change</div>
+
     </div>
+    <script src="../js/map.js"></script>
 </body>
 </html>
