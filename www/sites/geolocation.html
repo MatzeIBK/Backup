@@ -7,6 +7,8 @@
     <div class="lat-view" style="height: 200px; width: 100px">Latitude</div>
     <div class="long-view" style="height: 200px; width: 100px">Longitude</div>
 
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="phonegap.js"></script>
     <script>
         document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -16,7 +18,8 @@
                 $('.lat-view').html(pos.coords.latitude);
                 $('.long-view').html(pos.coords.longitude);
             }
-            $("#click").onclick(function () {
+
+            $('#getIt').click(function() {
                 navigator.geolocation.getCurrentPosition(disp);
             });
 
