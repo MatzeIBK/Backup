@@ -12,8 +12,8 @@
         Display coordinates of your location.
     </description>
 
-    <author href="http://weberish.com" email="info@weberish.com">
-        Weberish
+    <author href="" email="matthias.wanner@chello.at">
+        Matthias Wanner
     </author>
 
     <!--
@@ -43,7 +43,7 @@
     <!-- Plugins -->
 
     <!-- Core plugins -->
-    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.geolocation" version="0.3.10" />
 
     <!-- Define app icon for each platform. This is a relative path to config.xml.
         For e.g. if you place an icon.png inside res folder, you should modify the
