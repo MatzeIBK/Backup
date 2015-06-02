@@ -1,32 +1,23 @@
-<section id="wrapper">
-    Click the allow button to let the browser find your location.
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <title>Get My Coords</title>
+</head>
+<body>
+<div class="container">
+    <div id="getIt">Get My Coords</div>
+    <div class="long hds">Longitude</div>
+    <div class="long-view ds"></div>
+    <div class="lat hds">Latitude</div>
+    <div class="lat-view ds"></div>
 
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmouXxBlDi9G_UQigvgCxilD8LjKWMfBc&sensor=false#"></script>
-
-    <div id="click"style="height: 200px; width: 100px; background-color: red">Click me to get your position coordinates!</div>
-    <div>Lat</div>
-    <div class="lat-view" style="height: 200px; width: 100px"></div>
-    <div>Long</div>
-    <div class="long-view" style="height: 200px; width: 100px"></div>
-
-    <script src="../js/jquery-1.11.2.min.js"></script>
-    <script src="phonegap.js"></script>
-    <script>
-        document.addEventListener('deviceready', onDeviceReady, false);
-
-        function onDeviceReady() {
-
-            function disp(pos) {
-                $('.lat-view').html(pos.coords.latitude);
-                $('.long-view').html(pos.coords.longitude);
-            }
-
-            $('#getIt').click(function() {
-                navigator.geolocation.getCurrentPosition(disp);
-            });
-
-
-
-        }
-    </script>
-</section>
+</div>
+<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="../js/geolocation.js"></script>
+</body>
+</html>

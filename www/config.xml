@@ -6,7 +6,7 @@
         id        = "com.weberish.getmycoords"
         version   = "1.0.0">
 
-    <name>Get My Coords</name>
+    <name>ELF</name>
 
     <description>
         Display coordinates of your location.
