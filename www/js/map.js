@@ -1,12 +1,16 @@
 var infowindow = null;
+
+/* Global Map Object*/
+var mapProp = {
+    center: new google.maps.LatLng(47.822524, 13.175407),
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+};
+var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
 function initialize()
 {
-    var mapProp = {
-        center: new google.maps.LatLng(47.822524, 13.175407),
-        zoom: 16,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
     setStages(map, stages);
     setCamping(map, camps);
     setParking(map, parking);
@@ -44,14 +48,14 @@ function initialize()
     ];
 
     var coordinates_qdance = [
-       new google.maps.LatLng(47.820168, 13.175917),
-       new google.maps.LatLng(47.819408, 13.176167),
-       new google.maps.LatLng(47.819366, 13.176188),
-       new google.maps.LatLng(47.819198, 13.174816),
-       new google.maps.LatLng(47.819491, 13.174796),
-       new google.maps.LatLng(47.819889, 13.174863),
-       new google.maps.LatLng(47.820168, 13.174965),
-       new google.maps.LatLng(47.820224, 13.175034)
+        new google.maps.LatLng(47.820168, 13.175917),
+        new google.maps.LatLng(47.819408, 13.176167),
+        new google.maps.LatLng(47.819366, 13.176188),
+        new google.maps.LatLng(47.819198, 13.174816),
+        new google.maps.LatLng(47.819491, 13.174796),
+        new google.maps.LatLng(47.819889, 13.174863),
+        new google.maps.LatLng(47.820168, 13.174965),
+        new google.maps.LatLng(47.820224, 13.175034)
 
     ];
 
@@ -67,24 +71,24 @@ function initialize()
     ];
 
     var coordinates_caravanCamping = [
-         new google.maps.LatLng(47.826982, 13.171333),
-         new google.maps.LatLng(47.826660, 13.171068),
-         new google.maps.LatLng(47.826474, 13.170558),
-         new google.maps.LatLng(47.826352, 13.170304),
-         new google.maps.LatLng(47.826023, 13.170127),
-         new google.maps.LatLng(47.825888, 13.170405),
-         new google.maps.LatLng(47.825774, 13.170575),
-         new google.maps.LatLng(47.825532, 13.170683),
-         new google.maps.LatLng(47.825382, 13.170767),
-         new google.maps.LatLng(47.825173, 13.171105),
-         new google.maps.LatLng(47.824825, 13.171390),
-         new google.maps.LatLng(47.824796, 13.171931),
-         new google.maps.LatLng(47.824946, 13.172407),
-         new google.maps.LatLng(47.825225, 13.172628),
-         new google.maps.LatLng(47.826453, 13.172281),
-         new google.maps.LatLng(47.826652, 13.172102),
-         new google.maps.LatLng(47.826781, 13.171628),
-         new google.maps.LatLng(47.827015, 13.171343)
+        new google.maps.LatLng(47.826982, 13.171333),
+        new google.maps.LatLng(47.826660, 13.171068),
+        new google.maps.LatLng(47.826474, 13.170558),
+        new google.maps.LatLng(47.826352, 13.170304),
+        new google.maps.LatLng(47.826023, 13.170127),
+        new google.maps.LatLng(47.825888, 13.170405),
+        new google.maps.LatLng(47.825774, 13.170575),
+        new google.maps.LatLng(47.825532, 13.170683),
+        new google.maps.LatLng(47.825382, 13.170767),
+        new google.maps.LatLng(47.825173, 13.171105),
+        new google.maps.LatLng(47.824825, 13.171390),
+        new google.maps.LatLng(47.824796, 13.171931),
+        new google.maps.LatLng(47.824946, 13.172407),
+        new google.maps.LatLng(47.825225, 13.172628),
+        new google.maps.LatLng(47.826453, 13.172281),
+        new google.maps.LatLng(47.826652, 13.172102),
+        new google.maps.LatLng(47.826781, 13.171628),
+        new google.maps.LatLng(47.827015, 13.171343)
     ];
 
     var coordinates_campingNorth = [
@@ -135,14 +139,14 @@ function initialize()
     ];
 
     var coordinates_parkingComfort = [
-       new google.maps.LatLng(47.821634, 13.179770),
-       new google.maps.LatLng(47.821738, 13.180677),
-       new google.maps.LatLng(47.822120, 13.181576),
-       new google.maps.LatLng(47.822919, 13.181042),
-       new google.maps.LatLng(47.823013, 13.180213),
-       new google.maps.LatLng(47.822747, 13.179059),
-       new google.maps.LatLng(47.822571, 13.179309),
-       new google.maps.LatLng(47.821954, 13.179546)
+        new google.maps.LatLng(47.821634, 13.179770),
+        new google.maps.LatLng(47.821738, 13.180677),
+        new google.maps.LatLng(47.822120, 13.181576),
+        new google.maps.LatLng(47.822919, 13.181042),
+        new google.maps.LatLng(47.823013, 13.180213),
+        new google.maps.LatLng(47.822747, 13.179059),
+        new google.maps.LatLng(47.822571, 13.179309),
+        new google.maps.LatLng(47.821954, 13.179546)
     ];
     var coordinates_parkingNorth = [
         new google.maps.LatLng(47.827015, 13.171343),
@@ -255,19 +259,19 @@ function initialize()
     ];
 
     var coordinates_entrance = [
-          new google.maps.LatLng(47.820516, 13.179008),
-          new google.maps.LatLng(47.820450, 13.178860),
-          new google.maps.LatLng(47.820626, 13.178585),
-          new google.maps.LatLng(47.820622, 13.178373),
-          new google.maps.LatLng(47.820676, 13.178223),
-          new google.maps.LatLng(47.820990, 13.177729),
-          new google.maps.LatLng(47.821025, 13.177617),
-          new google.maps.LatLng(47.821002, 13.177523),
-          new google.maps.LatLng(47.820896, 13.177435),
-          new google.maps.LatLng(47.820169, 13.176938),
-          new google.maps.LatLng(47.820035, 13.176903),
-          new google.maps.LatLng(47.819995, 13.176831),
-          new google.maps.LatLng(47.819978, 13.176727)
+        new google.maps.LatLng(47.820516, 13.179008),
+        new google.maps.LatLng(47.820450, 13.178860),
+        new google.maps.LatLng(47.820626, 13.178585),
+        new google.maps.LatLng(47.820622, 13.178373),
+        new google.maps.LatLng(47.820676, 13.178223),
+        new google.maps.LatLng(47.820990, 13.177729),
+        new google.maps.LatLng(47.821025, 13.177617),
+        new google.maps.LatLng(47.821002, 13.177523),
+        new google.maps.LatLng(47.820896, 13.177435),
+        new google.maps.LatLng(47.820169, 13.176938),
+        new google.maps.LatLng(47.820035, 13.176903),
+        new google.maps.LatLng(47.819995, 13.176831),
+        new google.maps.LatLng(47.819978, 13.176727)
     ];
 
     var path_main = new google.maps.Polygon({
@@ -301,7 +305,7 @@ function initialize()
     });
 
     var path_stonehenge = new google.maps.Polygon({
-       paths: coordinates_stonehenge,
+        paths: coordinates_stonehenge,
         strokeColor:"#CC9037",
         strokeOpacity: 0.9,
         strokeWeight:1,
@@ -404,46 +408,7 @@ function initialize()
     }
     setMap(paths);
 
-/* initialized finished*/
-}
-
-/* geolocation */
-
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    document.getElementById("long").innerHTML = longitude;
-    document.getElementById("lat").innerHTML = latitude;
-
-    var center = new google.maps.LatLng(latitude, longitude);
-    map.panTo(center);
-
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
+    /* initialized finished*/
 }
 
 var stages = [
@@ -553,5 +518,49 @@ function setEntrances(map, entrance){
         });
     }
 }
+/* get the user Location */
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var img_center = '../img/max/center_icon.png';
+    var userCoordinates = new google.maps.LatLng(latitude, longitude);
+
+    /* Eventlistener when Center Button is pressed */
+
+    document.getElementById("long").innerHTML = longitude;
+    document.getElementById("lat").innerHTML = latitude;
+
+    var center = new google.maps.Marker({
+        position: userCoordinates,
+        map: map,
+        icon: img_center,
+    });
+    map.setCenter({lat: latitude, lng: longitude});
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
 google.maps.event.addDomListener(window, 'load', initialize);
