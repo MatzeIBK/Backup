@@ -407,6 +407,19 @@ function initialize()
 /* initialized finished*/
 }
 
+/* geolocation
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+
+} */
+
 var stages = [
     ['Mainstage', 47.823007, 13.175547, 9, '<p class="pag">Main Stage</p><a href="../sites/stages/mainstage.html"style="font-family: elfFont">Timetable</a>'],
     ['Clubcircus', 47.822759, 13.173946, 2, '<p class="pag">Club Circus</p><a href="../sites/stages/clubcircus.html"style="font-family: elfFont">Timetable</a>'],
