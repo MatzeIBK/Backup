@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <!-- Bootstrap init -->
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="phonegap.js"></script>
+    <script src="../js/swipe.js"></script>
+
+    <!-- Styles init -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+
+    <script src="../js/swipe.js"></script>
+    <script>
+        $(document).ready(function() {
+            Slider = $('#slider').Swipe({
+            }).data('Swipe');
+            $('.next').on('click', Slider.next);
+            $('.prev').on('click', Slider.prev);
+        });
+    </script>
+
+    <title>Electric Love Festival - Gallery</title>
+
+</head>
+
+<body>
+
+<div class="content-info">
+    <a href="../index.html" style="color: white; text-decoration: none;">
+        <div class="header_div" style="color: white">
+            <img src="../img/max/arrow_left_back.gif" class="header_arrow_back"/>
+            Gallery
+        </div>
+    </a>
+    <div style="background-color: black; height: 40px; margin-top: 60px"></div>
+    <div class="demo-wrapper">
+        <div id="slider" class="swipe">
+            <div class="swipe-wrap">
+                <div>
+                    <img src="../img/gallery/gallery%20(1).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(2).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(3).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(4).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(5).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(6).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(7).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(8).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(9).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(10).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(11).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(12).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(13).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(14).jpg" class="img-responsive">
+                </div>
+                <div>
+                    <img src="../img/gallery/gallery%20(15).jpg" class="img-responsive">
+                </div>
+            </div> <!-- Gallery Items-->
+
+        </div>
+    </div>
+    <div style="background-color: black; height: 40px;"></div>
+    <div class="col-xs-6 nav prev navbutton">Prev</div>
+    <div class="col-xs-6 nav next navbutton">Next</div>
+
+</div>
+</body>
+</html>

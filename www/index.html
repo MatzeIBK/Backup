@@ -1,23 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Get My Coords</title>
-    </head>
-    <body>
-        <div class="container">
-            <div id="getIt">Get My Coords</div>
-            <div class="long hds">Longitude</div>
-            <div class="long-view ds"></div>
-            <div class="lat hds">Latitude</div>
-            <div class="lat-view ds"></div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
+    <!-- Bootstrap init -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmouXxBlDi9G_UQigvgCxilD8LjKWMfBc&sensor=false#"></script>
+        <!-- Styles init -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+
+
+    <!-- this function provides a non lag for the countdown area, without it centering would be jitter-->
+    <script>
+        $(document).ready(function(){
+           $('body').fadeIn(400);
+        });
+    </script>
+
+    <title>Electric Love Festival</title>
+</head>
+
+<body style="display: none">
+    <div class="parent" style="overflow: hidden">
+        <div class="child" style="overflow: hidden">
+            <div class="col-xs-12 icon_name" style="margin-bottom: 20px">
+                <img src="img/main/logo_name.gif" style="width: 250px; height: 53px"/>
+            </div>
+
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-xs-4" style="padding: 0"><a href="sites/timetable.html"><img class="item_main" style="float: right" src="img/max/timetable.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0"><a href="sites/stages.html"><img class="item_main" src="img/max/stages_icon.png"></a></div>
+                <div class="col-xs-4" style="padding: 0"><a href="sites/geolocation.html"><img class="item_main" style="float: left" src="img/max/maps.gif"></a></div>
+            </div>
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-xs-4" style="padding: 0"><a href="sites/artists.html"><img class="item_main" style="float: right" src="img/max/dj.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0"><a href="sites/merch.html"><img class="item_main spinning" src="img/main/logo_new.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0"><a href="sites/food.html"><img class="item_main" style="float: left" src="img/max/food.gif"></a></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4" style="padding: 0"><a href="sites/gallery.html"><img class="item_main" style="float: right" src="img/max/gallery_icon.png"></a></div>
+                <div class="col-xs-4" style="padding: 0"><a href="sites/information.html"><img class="item_main" src="img/max/info.gif"></a></div>
+                <div class="col-xs-4" style="padding: 0"><a href="sites/offlinemap.html"><img class="item_main" style="float: left" src="img/max/offlinemap_icon.png"></a></div>
+            </div>
+
+            <hr style="margin: 15px 40px 15px 40px;">
+            <div class="container" id="div1" style="">
+                <div class="numbers" id="count2"></div>
+
+                <div class="row" style="padding: 0 30px 0 30px; margin: 0;">
+                    <div class="col-xs-3 numbers" id="dday" style="padding: -5px"></div>
+                    <div class="col-xs-3 numbers" id="dhour"></div>
+                    <div class="col-xs-3 numbers" id="dmin"></div>
+                    <div class="col-xs-3 numbers" id="dsec"></div>
+
+                </div>
+
+
+
+                <div class="row" style="padding: 0 30px 0 30px; margin: 0;">
+                    <div class="col-xs-3 title" id="days">DAYS</div>
+                    <div class="col-xs-3 title" id="hours">HOURS</div>
+                    <div class="col-xs-3 title" id="minutes">MINUTES</div>
+                    <div class="col-xs-3 title" id="seconds">SECONDS</div>
+                </div>
+            </div>
         </div>
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+    </div>
+    <script src="js/countdown.js"></script>
+
+
+
+</body>
+
 </html>

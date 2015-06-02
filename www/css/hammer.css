@@ -1,0 +1,13 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#image {
+    -webkit-transform-origin: 0 0;
+}
+
+#image, #wrap {
+    -webkit-transition: 250ms ease-in;
+}
+    

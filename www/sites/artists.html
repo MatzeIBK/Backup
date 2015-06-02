@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <!-- Bootstrap init -->
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="phonegap.js"></script>
+
+    <!-- Styles init -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+
+
+
+    <title>Electric Love Festival</title>
+
+</head>
+
+<body>
+
+    <div id="everything" class="content-info">
+        <a href="../index.html" style="text-decoration: none">
+            <div class="header_div">
+                <img src="../img/max/arrow_left_back.gif" class="header_arrow_back"/>
+                <em class="header_div" style="background-color: transparent">Artists</em>
+                <div style="float: right;"><a id="alphBnt"><img src="../img/max/sort.png" style="height: 30px; margin: 0 10px 0 0"
+                    onmouseover="this.src='../img/max/sort_blue.png'"
+                    onmouseout="this.src='../img/max/sort.png'"></a></div>
+            </div>
+        </a>
+        <div class="wrapper">
+            <div class="row artist_text"><a href="djs/alesso.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/alesso.jpg" class="artist_img"/></div>
+                <div class="col-xs-10 artist_container name">Alesso<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+            </a>
+            </div>
+            <div class="row artist_text"><a href="djs/aoki.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/aoki.jpg" class="artist_img"/></div>
+                <div class="col-xs-10 artist_container name">Steve Aoki<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+                </a>
+            </div>
+            <div class="row artist_text"><a href="djs/armin.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/armin.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Armin Van Buuren<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+                </a>
+            </div>
+            <div class="row artist_text"><a href="djs/axwell.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/axwell.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Axwell Λ Ingrosso<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+                </a>
+            </div>
+            <div class="row artist_text">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/showtek.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Showtek<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+            </div>
+            <div class="row artist_text"><a href="djs/deorro.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/deorro.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Deorro<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+                </a>
+            </div>
+            <div class="row artist_text">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/knifeparty.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Knife Party<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+            </div>
+            <div class="row artist_text"><a href="djs/zedd.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/zedd.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Zedd<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+            </a>
+            </div>
+            <div class="row artist_text"><a href="djs/tiesto.html" style="color: #ffffff">
+                <div class="col-xs-2 artist_container"><img src="../img/djs/tiesto.jpg" class="artist_img"/> </div>
+                <div class="col-xs-10 artist_container name">Tiesto<img src="../img/max/arrow_right.gif" class="arrow_right"/></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var $divs = $("div.row");
+
+        $('#alphBnt').on('click', function () {
+            var alphabeticallyOrderedDivs = $divs.sort(function (a, b) {
+                return $(a).find(".name").text() > $(b).find(".name").text();
+            });
+            $(".wrapper").html(alphabeticallyOrderedDivs);
+        });
+
+        $('#numBnt').on('click', function () {
+            var numericallyOrderedDivs = $divs.sort(function (a, b) {
+                return $(a).find(".a_time").text() > $(b).find(".a_time").text();
+            });
+            $(".containerli").html(numericallyOrderedDivs);
+        });
+    </script>
+</body>
+
+</html>

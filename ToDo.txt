@@ -1,0 +1,21 @@
+﻿ToDo:
+
+    - Mit Hilfe von Jquery Skelette ausfüllen
+    - MySQL datenbank anlegen und auslessen
+    - möglicher zwischenschritt benötigt, AJAX
+
+
+    STYLES:
+
+    - styles auslagern
+    - styles merge
+    -
+
+
+
+----------------------------------------------
+
+Design Ideen:
+	- image drehen/animieren bei hover von div
+	- gallery anpassen
+

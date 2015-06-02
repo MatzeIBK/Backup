@@ -1,0 +1,27 @@
+<section id="wrapper">
+    Click the allow button to let the browser find your location.
+
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCmouXxBlDi9G_UQigvgCxilD8LjKWMfBc&sensor=false#"></script>
+
+    <div id="click"style="height: 200px; width: 100px; background-color: red">Click me to get your position coordinates!</div>
+    <div class="lat-view" style="height: 200px; width: 100px">Latitude</div>
+    <div class="long-view" style="height: 200px; width: 100px">Longitude</div>
+
+    <script>
+        document.addEventListener('deviceready', onDeviceReady, false);
+
+        function onDeviceReady() {
+
+            function disp(pos) {
+                $('.lat-view').html(pos.coords.latitude);
+                $('.long-view').html(pos.coords.longitude);
+            }
+            $("#click").onclick(function () {
+                navigator.geolocation.getCurrentPosition(disp);
+            });
+
+
+
+        }
+    </script>
+</section>

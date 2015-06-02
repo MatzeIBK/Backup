@@ -1,0 +1,124 @@
+.accordion {
+    width:auto;
+    overflow:hidden;
+    margin:10px auto;
+    color:#474747;
+    padding: 10px 20px 10px 10px;
+}
+
+.accordion section{
+    float:left;
+    overflow:hidden;
+    color:#333;
+    cursor:pointer;
+    background: rgba(51, 51, 51, 0.75);
+    margin:5px;
+}
+.accordion section:hover {
+    background:#444;
+}
+
+.accordion section p {
+    display:none;
+}
+
+.accordion section:after{
+    position:relative;
+    font-size:24px;
+    color:#000;
+    font-weight:bold;
+}
+
+.accordion section:target {
+    background:#FFF;
+    padding:10px;
+}
+.accordion section:target:hover {
+    background:#FFF;
+}
+.accordion section:target h2 {
+    width:100%;
+    margin-bottom: 5px;
+}
+.accordion section:target h2 a{
+    color:#333;
+    padding:0;
+}
+.accordion section:target p {
+    display:block;
+}
+.accordion section h2 a{
+    padding:8px 10px;
+    display:block;
+    font-size:20px;
+    font-weight:normal;
+    color:#eee;
+    text-decoration:none;
+}
+
+.vertical section{
+    width:100%;
+    height:44px;
+    -webkit-transition:height 0.1s ease-out;
+    -moz-transition:height 0.1s ease-out;
+    -o-transition:height 0.1s ease-out;
+    transition:height 0.1s ease-out;
+}
+
+/*Set height of the slide*/
+.vertical :target{
+    height: 170px;
+    width:100%;
+}
+
+.vertical section h2 {
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    top:-15px;
+}
+
+.outer {
+     width: auto;
+     overflow: auto;
+     white-space: nowrap;
+ }
+
+.outer li {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    margin-right: 10px;
+    white-space: normal;
+}
+
+.img_accordion {
+    height: 35px;
+    width: 35px;
+    margin-right: 5px;
+}
+
+.btn_row {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.btn_style {
+    width: 100%;
+    height: 35px;
+    color: #ffffff;
+    background-color: rgba(36,87,162, 1);
+    border: 0px;
+    font-family: elfFont;
+}
+
+.btn_style:hover {
+    background-color: lightgrey;
+    color: black;
+}
+
+body {
+    font-size: 18px;
+}
+
