@@ -1,19 +1,14 @@
 var infowindow = null;
 
 /* Global Map Object*/
-var mapProp = {
-    center: new google.maps.LatLng(47.822524, 13.175407),
-    zoom: 16,
-    mapTypeId: google.maps.MapTypeId.SATELLITE
-};
-var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
-document.getElementById("center").addEventListener("click", function () {
-    document.getElementById("long").innerHTML = "hello";
-    document.getElementById("lat").innerHTML = latitude;
-});
 
 function initialize() {
+    var mapProp = {
+        center: new google.maps.LatLng(47.822524, 13.175407),
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
 
     setStages(map, stages);
