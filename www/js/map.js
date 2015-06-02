@@ -8,8 +8,14 @@ var mapProp = {
 };
 var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
-function initialize()
-{
+document.getElementById("center").addEventListener("click", function () {
+    document.getElementById("long").innerHTML = "hello";
+    document.getElementById("lat").innerHTML = latitude;
+});
+
+function initialize() {
+
+
     setStages(map, stages);
     setCamping(map, camps);
     setParking(map, parking);
@@ -435,7 +441,7 @@ var entrances = [
     ['north', 47.820667, 13.177333, 5, "<p class='pag'>North Entrance</p>"]
 ];
 
-/* get the user Location */
+/* get the user Location
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -450,7 +456,6 @@ function showPosition(position) {
     var longitude = position.coords.longitude;
     var img_center = '../img/max/center_icon.png';
     var userCoordinates = new google.maps.LatLng(latitude, longitude);
-    /* Eventlistener when Center Button is pressed */
     document.getElementById("center").addEventListener("click", function () {
         document.getElementById("long").innerHTML = longitude;
         document.getElementById("lat").innerHTML = latitude;
@@ -483,7 +488,7 @@ function showError(error) {
             break;
     }
 }
-
+ */
 function setCamping(map, campsides) {
 
     /* setting up the camping spots*/
