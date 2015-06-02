@@ -1,13 +1,13 @@
 var infowindow = null;
-
+var mapProp = {
+    center: new google.maps.LatLng(47.822524, 13.175407),
+    zoom: 16,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+};
+var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 function initialize()
 {
-    var mapProp = {
-        center: new google.maps.LatLng(47.822524, 13.175407),
-        zoom: 16,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
 
 
     setStages(map, stages);
