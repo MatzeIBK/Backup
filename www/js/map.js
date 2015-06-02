@@ -450,18 +450,21 @@ function showPosition(position) {
     var longitude = position.coords.longitude;
     var img_center = '../img/max/center_icon.png';
     var userCoordinates = new google.maps.LatLng(latitude, longitude);
-
     /* Eventlistener when Center Button is pressed */
+    document.getElementById("center").addEventListener("click", function () {
+        document.getElementById("long").innerHTML = longitude;
+        document.getElementById("lat").innerHTML = latitude;
 
-    document.getElementById("long").innerHTML = longitude;
-    document.getElementById("lat").innerHTML = latitude;
-
-    var center = new google.maps.Marker({
-        position: userCoordinates,
-        map: map,
-        icon: img_center
+        var center = new google.maps.Marker({
+            position: userCoordinates,
+            map: map,
+            icon: img_center
+        });
+        map.setCenter({lat: latitude, lng: longitude});
     });
-    map.setCenter({lat: latitude, lng: longitude});
+
+
+
 }
 
 function showError(error) {
