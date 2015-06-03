@@ -424,8 +424,6 @@ function showPosition(position) {
     var img_center = '../img/max/center_icon.png';
     var userCoordinates = new google.maps.LatLng(latitude, longitude);
     document.getElementById("center").addEventListener("click", function () {
-        document.getElementById("long").innerHTML = longitude;
-        document.getElementById("lat").innerHTML = latitude;
 
         var center = new google.maps.Marker({
             position: userCoordinates,
@@ -433,6 +431,11 @@ function showPosition(position) {
             icon: img_center
         });
         map.setCenter({lat: latitude, lng: longitude});
+        google.maps.event.addListener(center, 'click', function() {
+            infowindow.setContent("You are here!")
+            infowindow.open(map, center);
+        });
+
     });
 }
 
