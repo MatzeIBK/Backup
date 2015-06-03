@@ -421,8 +421,10 @@ function getLocation() {
 function showPosition(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    var img_center = '../img/max/center_icon.png';
+    var img_center = '../img/max/center.png';
     var userCoordinates = new google.maps.LatLng(latitude, longitude);
+
+    /*Handler for find me button*/
     document.getElementById("center").addEventListener("click", function () {
 
         var center = new google.maps.Marker({
@@ -432,7 +434,7 @@ function showPosition(position) {
         });
         map.setCenter({lat: latitude, lng: longitude});
         google.maps.event.addListener(center, 'click', function() {
-            infowindow.setContent("You are here!")
+            infowindow.setContent('<p class="pag">You are here!</p>');
             infowindow.open(map, center);
         });
 
@@ -457,29 +459,29 @@ function showError(error) {
 }
 
 var stages = [
-    ['Mainstage', 47.823007, 13.175547, 9, '<p class="pag">Main Stage</p><a href="../sites/stages/mainstage.html"style="font-family: elfFont">Timetable</a>'],
-    ['Clubcircus', 47.822759, 13.173946, 2, '<p class="pag">Club Circus</p><a href="../sites/stages/clubcircus.html"style="font-family: elfFont">Timetable</a>'],
-    ['qdance', 47.819577, 13.175395, 3, '<p class="pag">Q-Dance Stage</p><a href="../sites/stages/qdance.html"style="font-family: elfFont">Timetable</a>'],
-    ['stonehenge', 47.819711, 13.176502, 6, '<p class="pag">Stonehenge</p><a href="../sites/stages/stonehenge.html"style="font-family: elfFont">Timetable</a>']
+    ['Mainstage', 47.823007, 13.175547, 9, ' <p class="pag">Main Stage</p><a href="../sites/stages/mainstage.html"  >Timetable</a>'],
+    ['Clubcircus', 47.822759, 13.173946, 2, '<p class="pag">Club Circus</p><a href="../sites/stages/clubcircus.html">Timetable</a>'],
+    ['qdance', 47.819577, 13.175395, 3, '    <p class="pag">Q-Dance Stage</p><a href="../sites/stages/qdance.html"  >Timetable</a>'],
+    ['stonehenge', 47.819711, 13.176502, 6, '<p class="pag">Stonehenge</p><a href="../sites/stages/stonehenge.html" >Timetable</a>']
 ];
 
 var camps = [
-    ['south', 47.820650, 13.170293, 5, "<p class='pag'>Campnig South</p>"],
-    ['caravan', 47.825707, 13.171533, 7, "<p class='pag'>Camping Caravan</p>"],
-    ['north', 47.825411, 13.178014, 8, "<p class='pag'>Camping North</p>"],
-    ['comfort', 47.820625, 13.179887, 6, "<p class='pag'>Comfort Camping</p>"]
+    ['south', 47.820650, 13.170293, 5,   '<p class="pag">Campnig South</p>'],
+    ['caravan', 47.825707, 13.171533, 7, '<p class="pag">Camping Caravan</p>'],
+    ['north', 47.825411, 13.178014, 8,   '<p class="pag">Camping North</p>'],
+    ['comfort', 47.820625, 13.179887, 6, '<p class="pag">Comfort Camping</p>']
 ];
 
 var parking = [
-    ['parkingNorth',47.828468, 13.175752, 4, "<p class='pag' style='font-family: elfFont'>Parking - Camping North</p>"],
-    ['parkingComfort',47.822062, 13.180255, 4, "<p class='pag' style='font-family: elfFont'>Parking - Comfort Camping</p>"],
+    ['parkingNorth',47.828468, 13.175752, 4,    '<p class="pag">Parking - Camping North</p>'],
+    ['parkingComfort',47.822062, 13.180255, 4,  '<p class="pag">Parking - Comfort Camping</p>']
 ];
 
 var entrances = [
-    ['south1', 47.821850, 13.174311, 4, "<p class='pag'>South Entrance 1</p>"],
-    ['south2', 47.822801, 13.169587, 5, "<p class='pag'>South Entrance 2</p>"],
-    ['north', 47.823170, 13.178028, 5, "<p class='pag'>North Entrance</p>"],
-    ['north', 47.820667, 13.177333, 5, "<p class='pag'>North Entrance</p>"]
+    ['south1', 47.821850, 13.174311, 4, '<p class="pag">South Entrance 1</p>'],
+    ['south2', 47.822801, 13.169587, 5, '<p class="pag">South Entrance 2</p>'],
+    ['north', 47.823170, 13.178028, 5,  '<p class="pag">North Entrance</p>'],
+    ['north', 47.820667, 13.177333, 5,  '<p class="pag">North Entrance</p>']
 ];
 
 function setCamping(map, campsides) {
