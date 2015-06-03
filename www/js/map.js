@@ -1,5 +1,7 @@
 var infowindow = null;
 
+var map = null;
+
 function initialize()
 {
     var mapProp = {
@@ -7,57 +9,13 @@ function initialize()
         zoom: 16,
         mapTypeId: google.maps.MapTypeId.SATELLITE
     };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     setStages(map, stages);
     setCamping(map, camps);
     setParking(map, parking);
     setEntrances(map, entrances);
     getLocation();
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-    }
-
-    function showPosition(position) {
-        var latitude  = position.coords.latitude;
-        var longitude = position.coords.longitude;
-        var img_center = '../img/max/center_icon.png';
-        var userCoordinates = new google.maps.LatLng(latitude, longitude);
-        document.getElementById("center").addEventListener("click", function () {
-            document.getElementById("long").innerHTML = longitude;
-            document.getElementById("lat").innerHTML = latitude;
-
-            var center = new google.maps.Marker({
-                position: userCoordinates,
-                map: map,
-                icon: img_center
-            });
-            map.setCenter({lat: latitude, lng: longitude});
-        });
-    }
-
-    function showError(error) {
-        switch(error.code) {
-            case error.PERMISSION_DENIED:
-                x.innerHTML = "User denied the request for Geolocation."
-                break;
-            case error.POSITION_UNAVAILABLE:
-                x.innerHTML = "Location information is unavailable."
-                break;
-            case error.TIMEOUT:
-                x.innerHTML = "The request to get user location timed out."
-                break;
-            case error.UNKNOWN_ERROR:
-                x.innerHTML = "An unknown error occurred."
-                break;
-        }
-    }
-
 
     infowindow = new google.maps.InfoWindow({
         content: "loading..."
@@ -452,6 +410,48 @@ function initialize()
 /* initialized finished*/
 }
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latitude  = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    var img_center = '../img/max/center_icon.png';
+    var userCoordinates = new google.maps.LatLng(latitude, longitude);
+    document.getElementById("center").addEventListener("click", function () {
+        document.getElementById("long").innerHTML = longitude;
+        document.getElementById("lat").innerHTML = latitude;
+
+        var center = new google.maps.Marker({
+            position: userCoordinates,
+            map: map,
+            icon: img_center
+        });
+        map.setCenter({lat: latitude, lng: longitude});
+    });
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
 
 var stages = [
     ['Mainstage', 47.823007, 13.175547, 9, '<p class="pag">Main Stage</p><a href="../sites/stages/mainstage.html"style="font-family: elfFont">Timetable</a>'],
