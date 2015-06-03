@@ -1,17 +1,14 @@
 <!DOCTYPE HTML>
 <head>
+    <script src="../js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript">
         var watchID;
         var geoLoc;
-
-
         function showLocation(position) {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
-            alert("Latitude : " + latitude + " Longitude: " + longitude);
-            document.getElementById("output").innerHTML = ("Longitude: " + longitude + " Latitude: " + latitude + "<br>");
+            $('#output').append("Longitude: " + longitude + " Latitude: " + latitude + "<br>");
         }
-
         function errorHandler(err) {
             if(err.code == 1) {
                 alert("Error: Access is denied!");
@@ -19,15 +16,12 @@
                 alert("Error: Position is unavailable!");
             }
         }
-
         options = {
             enableHighAccuracy: true,
             timeout: 5000,
             maximumAge: 1000
         };
-
         function getLocationUpdate(){
-
             if(navigator.geolocation){
                 // timeout at 20000 milliseconds (20 seconds)
                 geoLoc = navigator.geolocation;
@@ -36,14 +30,21 @@
                 alert("Sorry, browser does not support geolocation!");
             }
         }
+
+        function stopWatching(watchID){
+            navigator.geolocation.clearWatch(watchID);
+            alert("Watching stopped");
+        }
     </script>
 </head>
 <html>
 <body>
 <form>
-    <input type="button" onclick="getLocationUpdate();"
-           value="Watch Update"/>
-    <p id="output"></p>
+    <button type="button" onclick="getLocationUpdate();"
+           value="Watch Update">Watch my Position</button>
+    <button type="button" onclick="stopWatching();"
+            value="Stop Update">Stop watching my Position</button>
+    <div id="output" style="margin-top: 10px"></div>
 </form>
 </body>
 </html>
