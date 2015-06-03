@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<head>
+    <script type="text/javascript">
+        var watchID;
+        var geoLoc;
+
+
+        function showLocation(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            alert("Latitude : " + latitude + " Longitude: " + longitude);
+            document.getElementById("output").innerHTML = ("Longitude: " + longitude + " Latitude: " + latitude + "<br>");
+        }
+
+        function errorHandler(err) {
+            if(err.code == 1) {
+                alert("Error: Access is denied!");
+            }else if( err.code == 2) {
+                alert("Error: Position is unavailable!");
+            }
+        }
+
+        options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 1000
+        };
+
+        function getLocationUpdate(){
+
+            if(navigator.geolocation){
+                // timeout at 20000 milliseconds (20 seconds)
+                geoLoc = navigator.geolocation;
+                watchID = geoLoc.watchPosition(showLocation, errorHandler, options);
+            }else{
+                alert("Sorry, browser does not support geolocation!");
+            }
+        }
+    </script>
+</head>
+<html>
+<body>
+<form>
+    <input type="button" onclick="getLocationUpdate();"
+           value="Watch Update"/>
+    <p id="output"></p>
+</form>
+</body>
+</html>
