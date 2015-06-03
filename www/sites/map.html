@@ -13,7 +13,10 @@
         <a href="../index.html" style="text-decoration: none">
             <div class="header_div">
                 <img src="../img/max/arrow_left_back.gif" class="header_arrow_back"/>
-                Online Map
+                <em class="header_div" style="background-color: transparent">Map</em>
+                <div style="float: right;"><a id="center" onclick="getLocation()"><img src="../img/max/gps.png" style="height: 30px; margin: 10px 10px -10px 0"
+                    onmouseover="this.src='../img/max/gps_blue.png'"
+                    onmouseout="this.src='../img/max/gps.png'"></a></div>
             </div>
         </a>
 
@@ -22,7 +25,6 @@
         </div>
 
         <div class="container" style="margin-top: 20px">
-            <button id="center" onclick="getLocation()">Click Me!</button>
             <div id="lat"></div>
             <div id="long"></div>
         </div>
