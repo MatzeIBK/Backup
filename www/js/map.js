@@ -1,6 +1,6 @@
 var infowindow = null;
-
 var map = null;
+var center = null;
 
 function initialize()
 {
@@ -9,6 +9,7 @@ function initialize()
         zoom: 16,
         mapTypeId: google.maps.MapTypeId.SATELLITE
     };
+
     map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
     setStages(map, stages);
@@ -20,6 +21,24 @@ function initialize()
     infowindow = new google.maps.InfoWindow({
         content: "loading..."
     });
+
+    center = new google.maps.Marker({
+        map: map,
+        icon: '../img/maps/center.png',
+        animation: google.maps.Animation.DROP
+    });
+    google.maps.event.addListener(center, 'click', toggleBounce);
+
+    function toggleBounce() {
+
+        if (center.getAnimation() != null) {
+            center.setAnimation(null);
+        } else {
+            center.setAnimation(google.maps.Animation.BOUNCE);
+        }
+    }
+
+
 
 
     var coordinates_main = [
@@ -421,18 +440,13 @@ function getLocation() {
 function showPosition(position) {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    var img_center = '../img/max/center.png';
     var userCoordinates = new google.maps.LatLng(latitude, longitude);
 
     /*Handler for find me button*/
-    document.getElementById("center").addEventListener("click", function () {
+    document.getElementById("getLoc").addEventListener("click", function () {
 
-        var center = new google.maps.Marker({
-            position: userCoordinates,
-            map: map,
-            icon: img_center
-        });
         map.setCenter({lat: latitude, lng: longitude});
+        center.setPosition(userCoordinates);
         google.maps.event.addListener(center, 'click', function() {
             infowindow.setContent('<p class="pag">You are here!</p>');
             infowindow.open(map, center);
