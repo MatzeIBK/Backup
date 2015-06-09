@@ -40,11 +40,11 @@
     <preference name="android-installLocation"      value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Splashscreen  preferences for Android-->
-
+    <!--
     <preference name="SplashScreen" value="splash.png" />
     <preference name="SplashScreenDelay" value="1000" />
     <preference name="SplashMaintainAspectRatio" value="true" />
-
+    -->
     <!-- Splashscreen preferences for IOS-->
     <!--
     <preference name="FadeSplashScreen" value="false"/>
