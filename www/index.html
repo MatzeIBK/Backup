@@ -22,14 +22,13 @@
         // Cordova is ready
         //
         function onDeviceReady() {
-            navigator.splashscreen.hide();
+            setTimeout(function() {
+                navigator.splashscreen.hide();
+            }, 2000);
         }
 
         $(document).ready(function(){
            $('body').fadeIn(400);
-            setTimeout(function() {
-                navigator.splashscreen.hide();
-            }, 1000);
         });
     </script>
 
