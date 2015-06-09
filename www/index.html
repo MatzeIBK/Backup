@@ -17,6 +17,14 @@
 
     <!-- this function provides a non lag for the countdown area, without it centering would be jitter-->
     <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+            navigator.splashscreen.hide();
+        }
+
         $(document).ready(function(){
            $('body').fadeIn(400);
             setTimeout(function() {
