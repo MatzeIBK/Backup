@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/config.js"></script>
+</head>
+<body>
+
+
+    <script>
+        $.ajax({
+            url: Config.get('url'),
+            type: 'post',
+            dataType: 'json',
+            success: function(response) {
+                if(response.updated) {
+                    // update your local storage
+                    alert(response);
+                } else {
+                    // load local storage
+                }
+            }, error: function() {
+                // TODO popup, alert
+            }
+        });
+    </script>
+</body>
+</html>
