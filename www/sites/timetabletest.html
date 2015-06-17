@@ -10,39 +10,59 @@
 
 
     <script>
-         $.ajax({
-            url: Config.get('url'),
-            type: 'post',
-            dataType: 'json',
-            success: function(response) {
-                if(response.updated) {
-                    // update your local storage
-                    // create or reopen file and store
-					// the json object "response" in it
-                    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
-                    function gotFS(fileSystem) {
-                        fileSystem.root.getFile("download/storage.json", {create: true, exclusive: false}, gotFileEntry, fail);
-                    }
-                    function gotFileEntry(fileEntry) {
-                        fileEntry.createWriter(onWriterOpen, fail);
-                    }
-                } else {
-                    // load local storage
-                    
-                }
-                function onWriterOpen(writer){
-                    writer.write("Test Write hope!");
-                }
+//         $.ajax({
+//            url: Config.get('url'),
+//            type: 'post',
+//            dataType: 'json',
+//            success: function(response) {
+//                if(response.updated) {
+//                    // update your local storage
+//                    // create or reopen file and store
+//					// the json object "response" in it
+//                    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+//                } else {
+//                    // load local storage
+//
+//                }
+//                function gotFS(fileSystem) {
+//                    fileSystem.root.getFile("download/storage.json", {create: true, exclusive: false}, gotFileEntry, fail);
+//                }
+//                function gotFileEntry(fileEntry) {
+//                    fileEntry.createWriter(onWriterOpen, fail);
+//                }
+//                function onWriterOpen(writer){
+//                    writer.write("Test Write hope!");
+//                }
+//
+//                function fail(error) {
+//                    console.log(error.code);
+//                }
+//            }, error: function(xhr, status, error) {
+//                // TODO popup, alert
+//                alert('error ' + xhr.responseText);
+//                console.log(xhr);
+//            }
+//        });
 
-                function fail(error) {
-                    console.log(error.code);
-                }
-            }, error: function(xhr, status, error) {
-                // TODO popup, alert
-                alert('error ' + xhr.responseText);
-                console.log(xhr);
-            }
-        });
+         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+         function gotFS(fileSystem) {
+             alert('got filesystem');
+             fileSystem.root.getFile("download/storage.json", {create: true, exclusive: false}, gotFileEntry, fail);
+         }
+         function gotFileEntry(fileEntry) {
+             alert('got file');
+             fileEntry.createWriter(onWriterOpen, fail);
+         }
+         function onWriterOpen(writer){
+             alert('wrting to file');
+             writer.write("Test Write hope!");
+         }
+
+         function fail(error) {
+             alert(error.code);
+             console.log(error.code);
+         }
     </script>
 </body>
 </html>
