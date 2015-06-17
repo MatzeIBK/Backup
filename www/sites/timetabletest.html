@@ -10,21 +10,37 @@
 
 
     <script>
-        $.ajax({
+         $.ajax({
             url: Config.get('url'),
             type: 'post',
             dataType: 'json',
             success: function(response) {
                 if(response.updated) {
                     // update your local storage
-                    alert(response);
+                    // create or reopen file and store
+					// the json object "response" in it
+                    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+                    function gotFS(fileSystem) {
+                        fileSystem.root.getFile("download/storage.json", {create: true, exclusive: false}, gotFileEntry, fail);
+                    }
+                    function gotFileEntry(fileEntry) {
+                        fileEntry.createWriter(onWriterOpen, fail);
+                    }
                 } else {
                     // load local storage
-                    alert('nothing happend');
+                    
+                }
+                function onWriterOpen(writer){
+                    writer.write("Test Write hope!");
+                }
+
+                function fail(error) {
+                    console.log(error.code);
                 }
             }, error: function(xhr, status, error) {
                 // TODO popup, alert
                 alert('error ' + xhr.responseText);
+                console.log(xhr);
             }
         });
     </script>
