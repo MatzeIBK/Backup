@@ -20,9 +20,11 @@
                     alert(response);
                 } else {
                     // load local storage
+                    alert('nothing happend');
                 }
-            }, error: function() {
+            }, error: function(xhr, status, error) {
                 // TODO popup, alert
+                alert('error ' + xhr.responseText);
             }
         });
     </script>
