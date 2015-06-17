@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timetable Artists</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="phonegap.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#add").click(function () {
+                var temp = $("#content");
+                alert(temp.text());
+                localStorage.setItem("test", temp);
+            });
+
+            $("#res").click(function() {
+
+                document.getElementById("result").innerHTML = localStorage.getItem("test");
+            });
+
+        });
+    </script>
+
+</head>
+
+<body style="color: #ffffff">
+    <button id="add" style="text-align: center" onclick="add()">Add</button>
+    <div id="content">
+        <div id="name">Hardwell</div>
+        <div id="time">22:00<div>
+    </div>
+    <button id="res" onclick="show()">Result:</button>
+    <div id="result"></div>
+
+
+</body>
+</html>
