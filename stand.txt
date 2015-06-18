@@ -1,0 +1,5 @@
+Stand:
+	- wieder gewechselt in Repo Reposotry 
+	- in Wusel habe ich belassen die Tests für Datenbank und timetable ajax load usw
+
+REPO hat die hardcodierte version!
